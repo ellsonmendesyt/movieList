@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React,{useState,useEffect} from 'react'
+import {Routes,Route} from 'react-router-dom'
+import Layout from './components/Layout/Layout';
+import {useContext} from 'react'
+import Home from './pages/Home/Home';
+import Tmdb from './api'
+import { MoviesProvider, MoviesContext } from './contexts/movieContext';
 function App() {
+
+const [movieList,setMovieList]=useState([]);
+const store=useContext(MoviesContext)
+
+  useEffect(() => {
+    const loadAll = async ()=>{
+       let list= await Tmdb.getHomeList();
+
+      //fill the store movie list
+      store.setMovies(list);       
+   }
+   loadAll();
+}, [])
+
+
+  // store.movies.length >0 && console.log(store.movies)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </Layout>
   );
 }
 
