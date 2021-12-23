@@ -18,7 +18,7 @@ const CardContainer = styled.div`
 max-width: 300px;
 /* width:100%; */
 display: inline-block;
-background-color: purple;
+background-color: #111;
 margin-bottom: 1rem;
 /* overflow: hidden; */
 

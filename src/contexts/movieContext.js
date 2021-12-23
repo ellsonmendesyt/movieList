@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react"
 
+// share our list to the whole application
 export const MoviesContext = createContext()
 
 export const MoviesProvider = ({ children }) => {

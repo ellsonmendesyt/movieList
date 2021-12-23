@@ -25,8 +25,9 @@ const Home = () => {
 }
 
 const HomeContainer = styled.section`
-/* background-color: #480ca8; */
+
 height: 100%;
+padding-top: 3rem;
 `
 
 

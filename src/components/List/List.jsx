@@ -42,7 +42,7 @@ const managetScrollRight=()=>{
 
     return (
         <ListContainer>
-            <h3>{title}</h3>
+            <ListTitle>{title}</ListTitle>
             <ListRow>
                     {
                         <LeftArrow onClick={manageScrollLeft} />
@@ -104,7 +104,10 @@ transition: all .3s;
 `
 
 
-
+const ListTitle = styled.h3`
+color:#fff;
+margin-left: 2rem;
+`
 
 
 
@@ -115,7 +118,7 @@ max-width: 100%;
 
 
 const ListTrack = styled.div`
-outline: 1px solid orange;
+/* outline: 1px solid orange; */
 width: 9999999px;
 transition: all .4s;
 

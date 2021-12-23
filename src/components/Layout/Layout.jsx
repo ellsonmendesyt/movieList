@@ -22,7 +22,7 @@ const LayoutContainer= styled.main`
 `
 
 const Page = styled.div`
-background-color: #ddd;
+background-color: #111;
 /* height: 100vh; */
 
 `
