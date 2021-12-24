@@ -22,9 +22,9 @@ React.useEffect(()=>{
 
 
 
-
+// #240046  #001233
     return (
-        <NavbarContainer style={{backgroundColor:`${isDark ? '#001233': '#111'}`}}>
+        <NavbarContainer style={{backgroundColor:`${isDark ? ' #202020 ': '#111'}`}}>
             <p>{store.movies.length}</p>
         </NavbarContainer>
     )
