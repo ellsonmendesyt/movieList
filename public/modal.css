@@ -1,0 +1,21 @@
+.ReactModal__Body--open{
+    background-color: yellowgreen !important;
+}
+
+
+.ReactModal__Content{
+    background-color: royalblue !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.ReactModal__Content iframe{
+    border: 2px solid purple;
+    width: 100%;
+    height: 100%;
+
+}
+
+.ReactModal__Overlay{
+    background-color: #111 !important;
+}

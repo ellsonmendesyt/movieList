@@ -5,6 +5,12 @@ import {useContext} from 'react'
 import Home from './pages/Home/Home';
 import Tmdb from './api'
 import { MoviesProvider, MoviesContext } from './contexts/movieContext';
+import Modal from 'react-modal';
+
+
+
+Modal.setAppElement('#root')
+
 function App() {
 
 const [movieList,setMovieList]=useState([]);
