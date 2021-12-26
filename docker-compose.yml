@@ -1,0 +1,9 @@
+version: '3'
+services: 
+  moviesapp:
+    build: .
+    command: yarn start
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src:/www/movie/src

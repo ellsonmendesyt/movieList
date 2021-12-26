@@ -21,12 +21,14 @@ const store=useContext(MoviesContext)
        let list= await Tmdb.getHomeList();
 
       //fill the store movie list
-      store.setMovies(list);       
+      store.setMovies(list);  
+
    }
+  
    loadAll();
 }, [])
 
-
+// console.log(store);
   // store.movies.length >0 && console.log(store.movies)
 
   return (

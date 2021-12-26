@@ -18,6 +18,10 @@ React.useEffect(()=>{
         resetScroll();
     });
 
+    // return ()=>{
+    //     window.removeEventListener('resize');
+    // }
+
   
 })
 
@@ -30,6 +34,7 @@ const manageScrollLeft=()=>{
     setScrollX(x)
 }
 
+// console.log(items)
 
 const managetScrollRight=()=>{
     let x= scrollX - Math.round(window.innerWidth * .5);
