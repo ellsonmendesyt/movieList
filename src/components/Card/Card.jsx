@@ -50,11 +50,8 @@ itemExtended && console.log(itemExtended)
             <CardTop>
                 <CardImage onClick={()=>handleModal(item.id)}  src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} />
 
-                  <Modal  isOpen={isModalOpen} ariaHideApp={false} onRequestClose={()=>setIsModalOpen(false)}>
-                    <ModalActions>
-                    <h1>Modal 1</h1>
-                    <button onClick={()=>setIsModalOpen(false)}>x</button>
-                    </ModalActions>
+                  <Modal  isOpen={isModalOpen} ariaHideApp={false} onRequestClose={()=>setIsModalOpen(false)} style={{zIndex:99999}}>
+               
                     <ModalRow>
                         <ModalCol>
                       <Iframe id="cartoonVideo" src={`//www.youtube.com/embed/${videoKey}`} frameBorder="0" allowFullScreen></Iframe>
@@ -64,7 +61,8 @@ itemExtended && console.log(itemExtended)
                             <CardImageFull  src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} />
                             <MovieDetails>
                                 <MovieTitle>
-                                    {item.original_title}
+                                    {item.original_title}  
+                                    <CloseBtn title='fechar' onClick={()=>setIsModalOpen(false)}>x</CloseBtn>
                                 </MovieTitle>
                                 <MovieSubtitle>{item.title}</MovieSubtitle>
                                 <MovieInfo>
@@ -87,6 +85,20 @@ itemExtended && console.log(itemExtended)
     )
 }
 
+const CloseBtn = styled.button`
+background-color: transparent;
+color: #fff;
+border: 1px solid orange;
+padding: .25rem .5rem;
+border-radius: 50%;
+cursor: pointer;
+
+&:hover{
+    background-color:#111;
+    
+}
+`
+
 const Caption= styled.span`
 font-size: .9rem;
 color: #fff;
@@ -100,46 +112,53 @@ padding: 0 .25rem;
 /* background-color: yellow; */
 `
 
-const MovieTitle = styled.h3`
+const MovieTitle = styled.div`
+display: flex;
+justify-content: space-between;
 color: #fff;
 font-family: 'Barlow', sans-serif;
+font-weight: bold;
+margin-bottom:0px;
+padding-bottom:0px;
 `
-const MovieSubtitle = styled.h5``
+const MovieSubtitle = styled.h5`
+padding: 0px;
+`
 
 
 const MovieInfo = styled.span`
 display: flex;
 justify-content: flex-start;
+flex-wrap: wrap;
 `
 
 
-const MovieDesc = styled.p``
-
-
-
-const ModalActions = styled.div`
-background-color: rgba(0,0,0,0.03);
- display: flex;
- justify-content: space-between;
- padding:.3rem 2rem ;
-
+const MovieDesc = styled.p`
+font-size: .8rem;
 `
+
+
+
+
 const ModalRow= styled.div`
 display: flex;
 width: 100%;
 height: 100%;
-outline: 2px solid olive;
+
+
+
+/* outline: 2px solid olive; */
 `
 
 const ModalCol = styled.div`
 height: 100%;
-outline: 1px solid red;
+/* outline: 1px solid red; */
 max-width: 650px;
 width:100%;
 `
 const ModalColRight=styled.div`
 height: 100%;
-outline: 1px solid red;
+/* outline: 1px solid red; */
 max-width: 650px;
 width:100%;
 background-size: cover;
@@ -231,11 +250,12 @@ letter-spacing: 1.5px;
 
 const CardTop= styled.div`
 /* outline: 1px solid orange; */
+/* padding-top: 50px; */
 
 `
 
 const CardTitle = styled.h3`
-background-color:orange;
+/* background-color:orange; */
 
 `
 
