@@ -28,6 +28,16 @@
 <p>Caso clique em <strong>link </strong> que direcione para uma rota não implementada será exibida a pagina <strong>404 </strong> personalizada </p>
 <img src="./public/preview/notfound.png">
 
+
+
+
+<h3 style="margin-top:30px">COMO CRIAR CONTAINER</h3>
+
+  <ul> 
+   <li> docker-composer up </li>
+  </ul>
+
+
 <h3 style="margin-top:30px">COMO TESTAR O PROJETO</h3>
 <ul> 
 <li>clone ou baixe o projeto</li>
@@ -35,13 +45,11 @@
 <li>Execute o comando para instalar as dependencias
   <ul> 
    <li> Yarn: yarn install </li>
-   <li> Npm: npn install </li>
   </ul>
 </li>
 <li>Após instaladas das dependendica rode:
 <ul> 
    <li> Yarn: yarn start </li>
-   <li> Npm: npn start </li>
   </ul>
 </li>
 
