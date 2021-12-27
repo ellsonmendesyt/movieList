@@ -40,8 +40,17 @@ transition: all .3s;
 
 
 export const ListTitle = styled.h3`
+display: inline-block;
+font-family: "Barlow",sans-serif;
 color:#fff;
 margin-left: 2rem;
+transition: all .3s ease-in-out;
+
+&:hover{
+    color: #01A2D8;
+    transition: all .3s ease-in-out;
+
+}
 `
 
 

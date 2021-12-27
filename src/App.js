@@ -6,6 +6,7 @@ import Home from './pages/Home/Home';
 import Tmdb from './api'
 import { MoviesProvider, MoviesContext } from './contexts/movieContext';
 import Modal from 'react-modal';
+import NotFound from './pages/NotFound';
 
 
 
@@ -32,9 +33,10 @@ const store=useContext(MoviesContext)
   // store.movies.length >0 && console.log(store.movies)
 
   return (
-    <Layout>
+    <Layout data-testid="layout">
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </Layout>
   );

@@ -11,12 +11,8 @@ ReactDOM.render(
   <React.StrictMode>
     <MoviesProvider>
         <Router>
-    
         <App />
-          
-
         </Router>
-
     </MoviesProvider>
     
 

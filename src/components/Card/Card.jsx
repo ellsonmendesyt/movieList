@@ -44,18 +44,18 @@ const [itemExtended,setItemExtended]=React.useState(null);
 
     return (
         <CardContainer style={{width:`${cardWidth}px`}}>
-            <CardTop>
+            
                 <CardImage onClick={()=>handleModal(item.id)}  src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} />
 
                   <Modal  isOpen={isModalOpen} ariaHideApp={false} onRequestClose={()=>setIsModalOpen(false)} style={{zIndex:99999}}>
                
                     <ModalRow>
                         <ModalCol>
-                      <Iframe id="cartoonVideo" src={`//www.youtube.com/embed/${videoKey}`} frameBorder="0" allowFullScreen></Iframe>
+                      <Iframe  src={`//www.youtube.com/embed/${videoKey}`} frameBorder="0" allowFullScreen></Iframe>
                         </ModalCol>
                         <ModalColRight  >
                             
-                            <CardImageFull  src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} />
+                            <CardImageFull seamless  src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} />
                             <MovieDetails>
                                 <MovieTitle>
                                     {item.original_title}  
@@ -77,7 +77,7 @@ const [itemExtended,setItemExtended]=React.useState(null);
                         </ModalColRight>
                     </ModalRow>
                   </Modal>
-            </CardTop>
+           
         </CardContainer>
     )
 }
