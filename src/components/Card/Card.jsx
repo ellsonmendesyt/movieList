@@ -9,7 +9,22 @@ import axios from 'axios'
 import {MoviesContext} from '../../contexts/movieContext'
 
 
-import{Caption,CardContainer,CardImage,CardImageFull,CardTop,CloseBtn,CardTitle,Iframe,Info,ModalCol,ModalColRight,ModalRow,MovieDesc,MovieDetails,MovieInfo,MovieSubtitle,MovieTitle} from './Card.styles'
+import{Caption,
+    CardContainer,
+    CardImage,
+    CardImageFull,
+    CloseBtn,
+    Iframe,
+    Info,
+    ModalCol,
+    ModalColRight,
+    ModalRow,
+    MovieDesc,
+    MovieDetails,
+    MovieInfo,
+    MovieSubtitle,
+    MovieTitle
+} from './Card.styles'
 
 
 
@@ -18,8 +33,7 @@ import{Caption,CardContainer,CardImage,CardImageFull,CardTop,CloseBtn,CardTitle,
 const Card = ({item}) => {
 
 
-const API_KEY='3b88845e949fdf7b792077a7a905048d';
-const BASE_URL='https://api.themoviedb.org/3';
+const {REACT_APP_API_BASE_URL,REACT_APP_API_KEY} = process.env;
 const store=React.useContext(MoviesContext)
 
 
@@ -31,8 +45,8 @@ const [itemExtended,setItemExtended]=React.useState(null);
 
 
  const handleModal=async(id)=>{
-    const res =await axios.get(`${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}&language=pt-BR`)
-    const itemMoreInfo= await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=3b88845e949fdf7b792077a7a905048d&language=pt-BR`)
+    const res =await axios.get(`${REACT_APP_API_BASE_URL}/movie/${id}/videos?api_key=${REACT_APP_API_KEY}&language=pt-BR`)
+    const itemMoreInfo= await axios.get(`${REACT_APP_API_BASE_URL}/movie/${id}?api_key=${REACT_APP_API_KEY}&language=pt-BR`)
    // console.log(res.data.results[0].key)
    setVideoKey(res.data.results[0].key);
    setItemExtended(itemMoreInfo.data)
