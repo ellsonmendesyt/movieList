@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_KEY='3b88845e949fdf7b792077a7a905048d';
+ const API_KEY='3b88845e949fdf7b792077a7a905048d';
 const BASE_URL='https://api.themoviedb.org/3';
 
 
@@ -10,7 +10,7 @@ const BASE_URL='https://api.themoviedb.org/3';
 const {REACT_APP_API_BASE_URL,REACT_APP_API_KEY} = process.env;
 
 // make a single request to themoviedb
-const fetchData = async (endpoint)=>{
+export const fetchData = async (endpoint)=>{
    const response= await axios.get(`${REACT_APP_API_BASE_URL}${endpoint}`)
     const {data}=response;
     return data;
