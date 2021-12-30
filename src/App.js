@@ -10,7 +10,8 @@ import NotFound from './pages/NotFound';
 
 
 
-Modal.setAppElement('#root')
+if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
+
 
 function App() {
 
